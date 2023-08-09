@@ -102,18 +102,19 @@ cheat1.addEventListener("click", function() {
 
 // hide Cheet
 
-var hidecheat= document.getElementById("hideCheat");
-hidecheat.addEventListener("click", function(){
-    var cheat1= document.getElementsByClassName("cheat")[0];
-    var cheat2= document.getElementsByClassName("cheat")[1];
-    
-    var currentBG= cheat1.style.backgroundColor;
+var hidecheat = document.getElementById("hideCheat");
+var cheat1 = document.getElementsByClassName("cheat")[0];
+var cheat2 = document.getElementsByClassName("cheat")[1];
 
-    if(currentBG === 'transparent' || currentBG === ''){
-        cheat1.style.backgroundColor = "#CB8E6F";
-    }
-    else{
+var isCheatHidden = false; // Initial state is not hidden
+
+hidecheat.addEventListener("click", function() {
+    if (isCheatHidden) {
+        cheat1.style.backgroundColor = "#745644";
+    } else {
         cheat1.style.backgroundColor = "transparent";
     }
+    
     cheat2.style.backgroundColor = cheat1.style.backgroundColor;
+    isCheatHidden = !isCheatHidden; // Toggle the state
 });
