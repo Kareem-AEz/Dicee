@@ -104,6 +104,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 460px;
 }
 .footer__made-with-love{
     margin-top: 120px;
