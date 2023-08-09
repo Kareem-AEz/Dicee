@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection{
+    background-color: #493428;
+    color: #D8C3AF;
+}
+
+img,
+picture,
+canvas,
+video,
+svg{
+    user-select: none;
+    display: block;
+    max-width: 100%;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #CB8E6F, #D8C3AF);
+    height: 100vh;
+}
+.nav_container{
+    margin-left: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    user-select: none;
+    max-width: 820px;
+}
+nav h2{
+    color: white;
+    transition: all 0.2s ease-out;
+}
+nav h2:hover{
+    color: #493428;
+}
+
+
+.main_content{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main_content h1{
+    text-align: center;
+}
+.main_content_players{
+    margin-top: 50px;
+    margin-left:80px;
+    margin-right:80px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.main_content button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border: solid #493428 2px;
+    border-radius: 50px;
+    color: #493428;
+    background-color: #f2e4d7;
+    font-weight: 800;
+    align-self: center;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    
+}
+button:hover{
+    color: #493428;
+    background-color: white;
+    border-color: #493428;
+}
+
+button:active{
+    background-color: #E6CFC3;
+}
+
+button:focus{
+    border-color:  #CB8E6F ;
+}
+.main_content_player1, 
+.main_content_player2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer__made-with-love{
+    margin-top: 120px;
+    user-select: none;
+    display: flex;
+    gap: 12px;
+    transition: all 0.3s;
+    justify-content: center;
+}
+.footer__made-with-love svg{
+    height: 12px;
+    justify-content: center;
+    align-self: center;
+}
+.footer__made-with-love:hover{
+    color: white;
+    fill: white;
+}
+
+footer h4 {
+    margin-top: 80px;
+    font-weight: 700;
+    font-size: 15px;
+}
+a{
+    color:white ;
+    transition: all 0.3s;
+}
+a:hover{
+    color: #493428;
+}
+
+img{
+    height: 150px;
+    user-select: none;
+}
