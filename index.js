@@ -1,11 +1,9 @@
 var button = document.getElementById("myButton");
 var shuffleText = document.getElementById("Shuffle_res");
 
-var dice = './SVG/Dice${}.svg'
+var dice = './SVG/Dice${}.svg';
 
-// Add a click event listener to the button
-button.addEventListener("click", function() {
-   function player1_random(){
+function player1_random(){
     let x= Math.random();
     let y= Math.round((x*5)+1);
     return y;
@@ -16,6 +14,14 @@ button.addEventListener("click", function() {
     let y= Math.round((x*5)+1);
     return y;
    }
+
+var img_player1 = document.querySelectorAll("img")[0];
+var img_player2 = document.querySelectorAll("img")[1];
+
+
+// Add a click event listener to the button
+button.addEventListener("click", function() {
+   
 
    let res1= player1_random();
    let res2= player2_random();
@@ -39,4 +45,75 @@ button.addEventListener("click", function() {
 
    img_player1.src=`./SVG/Dice${res1}.svg`;
    img_player2.src=`./SVG/Dice${res2}.svg`;
+});
+
+// ----------------------Cheat1
+var cheat1= document.getElementById("cheat1");
+
+cheat1.addEventListener("click", function() {
+    console.log("Cheat1");
+    n=0;
+    do{
+        x= player1_random();
+        y= player2_random();
+        n++;
+    } while(x < y);
+    if (x==y){
+        img_player1.src=`./SVG/Dice${x}.svg`;
+        img_player2.src=`./SVG/Dice${y}.svg`;
+        document.getElementById("Shuffle_res").innerHTML= ("DRAW!!");
+    }
+    else{
+        img_player1.src=`./SVG/Dice${x}.svg`;
+        img_player2.src=`./SVG/Dice${y}.svg`;
+        document.getElementById("Shuffle_res").innerHTML= ("⭐Player 1 Wins!!");
+    }
+    console.log(x);
+    console.log(y);
+    console.log(n);
+});
+
+// ----------------------Cheat2
+var cheat1= document.getElementById("cheat2");
+
+cheat1.addEventListener("click", function() {
+    console.log("Cheat2");
+    n=0;
+    do{
+        x= player1_random();
+        y= player2_random();
+        n++;
+    } while(x > y);
+
+    if (x==y){
+        img_player1.src=`./SVG/Dice${x}.svg`;
+        img_player2.src=`./SVG/Dice${y}.svg`;
+        document.getElementById("Shuffle_res").innerHTML= ("DRAW!!");
+    }
+    else{
+        img_player1.src=`./SVG/Dice${x}.svg`;
+        img_player2.src=`./SVG/Dice${y}.svg`;
+        document.getElementById("Shuffle_res").innerHTML= ("Player 2 Wins!⭐");
+    }
+    console.log(x);
+    console.log(y);
+    console.log(n);
+});
+
+// hide Cheet
+
+var hidecheat= document.getElementById("hideCheat");
+hidecheat.addEventListener("click", function(){
+    var cheat1= document.getElementsByClassName("cheat")[0];
+    var cheat2= document.getElementsByClassName("cheat")[1];
+    
+    var currentBG= cheat1.style.backgroundColor;
+
+    if(currentBG === 'transparent' || currentBG === ''){
+        cheat1.style.backgroundColor = "#CB8E6F";
+    }
+    else{
+        cheat1.style.backgroundColor = "transparent";
+    }
+    cheat2.style.backgroundColor = cheat1.style.backgroundColor;
 });
